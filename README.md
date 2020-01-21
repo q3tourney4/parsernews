@@ -48,5 +48,5 @@ script path: parsernews/parsernews/projectnews/test/test_suite_runner.py
 - /parsernews$ coverage run --source=parsernews  parsernews/projectnews/test/test_suite_runner.py && coverage report -m
 
 10) Запуск через Dockerfile:
-docker build -t parsernews-docker .
-docker run -p 8000:8000 --rm -it parsernews-docker
+- docker build -t parsernews-docker .
+- docker run -p 8000:8000 --rm -it parsernews-docker
