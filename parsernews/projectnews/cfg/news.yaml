@@ -1,0 +1,4 @@
+sites:
+  hackernews_count: 30
+  hackernews_url: "https://news.ycombinator.com/"
+  hackernews_start_tracker: 3
