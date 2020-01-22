@@ -24,8 +24,8 @@ environment variables: PYTHONUNBUFFERED=1;DJANGO_SETTINGS_MODULE=parsernews.sett
 {
    "method":"posts",
    "params":{
-   	  "update_news": true, 
-   	  "wizard": "hackernews",
+      "update_news": true, 
+      "wizard": "hackernews",
       "order": "title",
       "offset": 10,
       "limit": 10
@@ -39,11 +39,11 @@ environment variables: PYTHONUNBUFFERED=1;DJANGO_SETTINGS_MODULE=parsernews.sett
 
 Описание параметров:
 
-"wizard": str - это идентификатор новостного сайта. По умолчанию "hackernews".
-"update_news": bool - это запрос актуальных новостей по требованию. По умолчанию отключен.     
-"order": str - это сортировка по полям БД.
-"offset": int - это смещение в выборке.
-"limit": int - это количество новостей в выборке.
+- "wizard": str - это идентификатор новостного сайта. По умолчанию "hackernews".
+- "update_news": bool - это запрос актуальных новостей по требованию. По умолчанию отключен.     
+- "order": str - это сортировка по полям БД.
+- "offset": int - это смещение в выборке.
+- "limit": int - это количество новостей в выборке.
 
 8) Запуск через консоль:
 - /parsernews$ export DJANGO_SETTINGS_MODULE=parsernews.settings
