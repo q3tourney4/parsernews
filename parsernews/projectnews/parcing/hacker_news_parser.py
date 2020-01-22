@@ -41,9 +41,6 @@ def parcing_hackernew() -> None:
 
     elements_news = get_elements_news(specific_data, 0, limit_news)
 
-    # TODO Только топ новостей. Убрать если нужны все новости.
-    NewsAggregator.objects.all().delete()
-
     NewsAggregator.objects.bulk_create(
         NewsAggregator(
             title=row["title"],

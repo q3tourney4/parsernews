@@ -6,6 +6,7 @@ from parsernews.projectnews.parcing.hacker_news_parser import parcing_hackernew
 
 
 def get_posts(
+    update_news: bool = False,
     wizard: str = "hackernews",
     order: Optional[str] = "title",
     offset: Optional[int] = 0,
@@ -14,7 +15,8 @@ def get_posts(
 ) -> Optional[List[Dict]]:
 
     # Создание новостей по требованию
-    parcing_hackernew()
+    if update_news:
+        parcing_hackernew()
 
     # Обработка исключительных ситуаций
     if kwargs or not validate_paramters(order, offset, limit):
@@ -24,7 +26,9 @@ def get_posts(
             "limit: 1 до 30."
             "offset: 1 до 10."
             "order: title, url, created."
-            "Пример запроса: http://localhost:8000/posts?order=title&offset=10&limit=10"
+            "wizard: hackernews. Необязательный параметр."
+            "update_news: true/false. Необязательный параметр."
+            "Пример запроса: http://0.0.0.0:8000/posts?order=title&offset=10&limit=10"
         )
 
     return get_news(wizard, order, offset, limit)

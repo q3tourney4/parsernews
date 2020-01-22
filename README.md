@@ -19,12 +19,13 @@ script path: /parsernews/projectnews/app.py
 environment variables: PYTHONUNBUFFERED=1;DJANGO_SETTINGS_MODULE=parsernews.settings
 7) Тестирование, к примеру, через Postman. 
 Запрос через метод get: http://localhost:8000/
-Тело запроса:
+Тело полного запроса:
 ``` 
 {
    "method":"posts",
    "params":{
-      "wizard": "hackernews",
+   	  "update_news": true, 
+   	  "wizard": "hackernews",
       "order": "title",
       "offset": 10,
       "limit": 10
@@ -32,8 +33,17 @@ environment variables: PYTHONUNBUFFERED=1;DJANGO_SETTINGS_MODULE=parsernews.sett
    "jsonrpc":"2.0",
    "id":"xxx5690xxx"
 }
+
 ```
-Параметр "wizard" является не обязательным.
+Параметр "wizard" и "update_news" являются не обязательными.
+
+Описание параметров:
+
+"wizard": str - это идентификатор новостного сайта. По умолчанию "hackernews".
+"update_news": bool - это запрос актуальных новостей по требованию. По умолчанию отключен.     
+"order": str - это сортировка по полям БД.
+"offset": int - это смещение в выборке.
+"limit": int - это количество новостей в выборке.
 
 8) Запуск через консоль:
 - /parsernews$ export DJANGO_SETTINGS_MODULE=parsernews.settings
